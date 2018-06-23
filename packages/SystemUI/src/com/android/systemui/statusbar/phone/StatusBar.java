@@ -2004,11 +2004,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             if (isAmbientContainerAvailable()) {
                 ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata, notificationText);
             }
+	   final int[] colors = {n.backgroundColor, n.foregroundColor,
+                    n.primaryTextColor, n.secondaryTextColor};
             if (mNavigationBar != null) {
-                Notification n = entry.notification.getNotification();
-                int[] colors = {n.backgroundColor, n.foregroundColor,
-                        n.primaryTextColor, n.secondaryTextColor};
-                mNavigationBar.setPulseColors(n.isColorizedMedia(), colors);
+	         mNavigationBar.setPulseColors(n.isColorizedMedia(), colors);
             }
         }
     }
